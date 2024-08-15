@@ -12,7 +12,7 @@ const res  = await fetch("https://jsonplaceholder.typicode.com/posts",{
     if(!res.ok){
       throw new Error("Failled to fetch data")
     }
-
+    
     return res.json()
 }
 
