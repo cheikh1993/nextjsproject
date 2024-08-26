@@ -6,7 +6,10 @@
    margin-bottom: 100px;
 }
 .imgContainer{
-
+    flex: 1;
+    height: 300px;
+    width: 400px;
+    position: relative;
 }
 .image{
     object-fit: cover;
