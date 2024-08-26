@@ -28,8 +28,9 @@ const Bloc  = async () => {
       <div className={styles.imgContainer}>
         <Image
         src={item.img}
-      
-        fill={true}
+        width={400}
+        height={250}
+        
         alt=''
         className={styles.image}
         />
