@@ -32,16 +32,15 @@ const router = useRouter()
   }
   return (
     <div className={styles.container}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <input type="text" placeholder='username' className={styles.input} required />
-        <input type="email" placeholder='email' className={styles.input} required/>
-        <input type="password" placeholder='password' className={styles.input}required  />
-        <button className={styles.button}>Register</button>
-      </form>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <input type="text" placeholder='username' className={styles.input} required />
+          <input type="email" placeholder='email' className={styles.input} required/>
+          <input type="password" placeholder='password' className={styles.input}required  />
+          <button className={styles.button}>Register</button>
+        </form>
       {error && "Sommething wrong"}
      <Link href="/dashboard/login">Login with an existing account</Link>
     </div>
   )
 }
-
 export default Register

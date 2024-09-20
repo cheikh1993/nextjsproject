@@ -4,6 +4,7 @@ import React from 'react'
 import Link from 'next/link'
 import styles from "./page.module.css"
 import DarkModetogle from '../DarkModetogle/DarkModetogle'
+import { signOut, useSession } from 'next-auth/react'
 
 const links = [
     {
@@ -38,8 +39,10 @@ const links = [
         url: "/dashboard"
     },
 ]
+
+
 const NavBar = () => {
- 
+    const session = useSession()
   return (
     <div className={styles.container}>
       <Link href="/" className={styles.logo}>Cheikh</Link>
@@ -48,7 +51,11 @@ const NavBar = () => {
         {links.map((item)  => 
             <Link  href={item.url} key={item.id} className={styles.link} >{item.title}</Link>) }
 
-            <button onClick={() => console.log("cliked!!")} className={styles.logout}>Logout</button>
+          {
+
+          session.status == "authenticated" &&
+           <button onClick={signOut} className={styles.logout}>Logout</button>
+          }
       </div>
     </div>
   )
